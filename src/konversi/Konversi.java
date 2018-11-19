@@ -20,7 +20,7 @@ public class Konversi {
     
     static int des;
     static String bin;
-    static String hex;
+    static String nila;
     
     //Input nilai
     public static int inputDes(){
@@ -43,6 +43,7 @@ public class Konversi {
             biner(n/2);
         }
         System.out.print(n%2);
+//        return biner(n%2);
     }
     
     //Konversi Desimal ke Oktal
@@ -51,6 +52,7 @@ public class Konversi {
             oktal(n/8);
         }
         System.out.print(n%8);
+//        return oktal(n%8);
     }
     
     //Konversi Desimal ke Hexa
@@ -63,7 +65,7 @@ public class Konversi {
     }
     
     //Konversi Biner ke Desimal
-    public static void binDes(String n){
+    public static int binDes(String n){
         int x, y = 0;
         for(x = 0; x < n.length();x++){
             if(n.charAt(x) == '1'){
@@ -72,21 +74,13 @@ public class Konversi {
             else
                 y += 0;
         }
-        System.out.print(y);
+        return y;
     }
     
     //Konversi Biner ke Oktal
     public static void binOktal(String n){
-        int x, y = 0;
-        
-        for(x = 0; x < n.length();x++){
-            if(n.charAt(x) == '1'){
-                y += Math.pow(2,(n.length()-1)-x);
-            }
-            else
-                y += 0;
-        }
-        
+        int y = 0;
+        y = binDes(bin);
         if(y>1){
             oktal(y/8);
         }
@@ -95,16 +89,8 @@ public class Konversi {
     
     //Konversi Biner ke Hexa
     public static void binHex(String n){
-        int x, y = 0;
-        
-        for(x = 0; x < n.length();x++){
-            if(n.charAt(x) == '1'){
-                y += Math.pow(2,(n.length()-1)-x);
-            }
-            else
-                y += 0;
-        }
-        
+        int y = 0;
+        y = binDes(bin);
         char[] nilaiHexa = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
         if(y>1){
             hexa(y/16);
@@ -132,8 +118,7 @@ public class Konversi {
     //Menampilkan konversi dari biner
     public static void tmpBin(){
         inputBin();
-        System.out.print("Desimalnya adalah : ");
-        binDes(bin);
+        System.out.print("Desimalnya adalah : " + binDes(bin));
         System.out.println("");
         System.out.print("Oktalnya adalah : ");
         binOktal(bin);
