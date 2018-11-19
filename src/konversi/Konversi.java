@@ -20,7 +20,7 @@ public class Konversi {
     
     static int des;
     static String bin;
-    static String nila;
+    static String hex;
     
     //Input nilai
     public static int inputDes(){
@@ -39,11 +39,14 @@ public class Konversi {
     
     //Konversi Desimal ke Biner
     public static void biner(int n){
+        String y;
         if(n>1){
             biner(n/2);
         }
-        System.out.print(n%2);
-//        return biner(n%2);
+        y = Integer.toString(n%2);
+        System.out.print(y);
+        //for(int x = 0; x > )
+        //return y;
     }
     
     //Konversi Desimal ke Oktal
@@ -52,7 +55,6 @@ public class Konversi {
             oktal(n/8);
         }
         System.out.print(n%8);
-//        return oktal(n%8);
     }
     
     //Konversi Desimal ke Hexa
@@ -75,12 +77,14 @@ public class Konversi {
                 y += 0;
         }
         return y;
+        //System.out.print(y);
     }
     
     //Konversi Biner ke Oktal
     public static void binOktal(String n){
         int y = 0;
         y = binDes(bin);
+        
         if(y>1){
             oktal(y/8);
         }
@@ -98,12 +102,10 @@ public class Konversi {
         System.out.print(nilaiHexa[y%16]);
     }
     
-    public static void hexDes(String n){
-        
-    }
     //Menampilkan konversi dari desimal
     public static void tmpDes(){
         inputDes();
+        //System.out.print("Binernya adalah : " + biner(des));
         System.out.print("Binernya adalah : ");
         biner(des);
         System.out.println("");
@@ -119,6 +121,7 @@ public class Konversi {
     public static void tmpBin(){
         inputBin();
         System.out.print("Desimalnya adalah : " + binDes(bin));
+        //binDes(bin);
         System.out.println("");
         System.out.print("Oktalnya adalah : ");
         binOktal(bin);
