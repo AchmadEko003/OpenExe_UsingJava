@@ -55,6 +55,7 @@ public class Konversi {
             oktal(n/8);
         }
         System.out.print(n%8);
+        System.out.println("");
     }
     
     //Konversi Desimal ke Hexa
