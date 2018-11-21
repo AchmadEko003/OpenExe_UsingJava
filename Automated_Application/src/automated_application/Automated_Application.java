@@ -31,6 +31,7 @@ public class Automated_Application {
         //set string values
         String defaultUrl = "http://www.google.com";
         myUrl = "http://www.bing.com";
+        System.out.println("");
   
         //if args[] array is empty open google else open args
         if (args.length == 0){
